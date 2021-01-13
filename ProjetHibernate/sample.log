@@ -1,0 +1,21 @@
+668  [main] WARN  org.hibernate.util.JDBCExceptionReporter  - SQL Error: 1062, SQLState: 23000
+668  [main] ERROR org.hibernate.util.JDBCExceptionReporter  - Duplicate entry '2' for key 'PRIMARY'
+668  [main] ERROR org.hibernate.event.def.AbstractFlushingEventListener  - Could not synchronize database state with session
+org.hibernate.exception.ConstraintViolationException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:94)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:266)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:167)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:50)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1028)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:366)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:137)
+	at com.test.Test_Hibernate.main(Test_Hibernate.java:19)
+Caused by: java.sql.BatchUpdateException: Duplicate entry '2' for key 'PRIMARY'
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1669)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1085)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 8 more
