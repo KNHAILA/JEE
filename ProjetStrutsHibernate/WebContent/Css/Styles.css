@@ -1,0 +1,19 @@
+.index{
+	 display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2{
+	color: #0080c0;
+}
+hr{
+	  border-top: 2px dashed #0080c0;
+	
+}
+
+.compteButton{
+	background-color: #0080c0;
+	color:white;
+	border-color: white;
+	
+}
