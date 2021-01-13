@@ -1,0 +1,61 @@
+.index{
+	 display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.indexButton{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+	margin-right:5px;
+	border-color: white;
+	background-color: black;
+	color:white;
+}
+h2{
+	color: #0080c0;
+}
+hr{
+	  border-top: 2px dashed #0080c0;
+	
+}
+.compteButton{
+	position: absolute;
+	margin-top: 5px;
+	background-color: #0080c0;
+	color:white;
+	border-color: white;
+	
+}
+
+
+legend{
+	color:blue;
+	font: bold; 
+}
+.error{
+	color: green;
+	font:bold;
+}
+fieldset{
+	border-color: blue;
+	border-style: solid;
+	margin-bottom: 10px;
+	width: 500px;
+	padding-bottom: 30px;
+}
+
+
+.required{
+	color: red;
+}
+
+.affichage th,.affichage td{
+		border: 1px solid black;
+}
+.s{
+	background-color: blue;
+}
+
+.button{
+	margin-left: 100px;
+}

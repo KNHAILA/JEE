@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+<package name="dafault" namespace="/" extends="struts-default">
+<default-action-ref name="index"></default-action-ref>
+<action name="index"><result>Vues/index.jsp</result> </action>
+<action name="compte"><result>Vues/Compte.jsp</result> </action>
+<action name="inscrire"><result>Vues/Inscrire.jsp</result> </action>
+
+<action name="saveCompte" class="com.ensak.bean.Compte" method="CreerCompte">
+	<result name="success">Vues/Confcompte.jsp</result>
+	<result name="error">Vues/Compte.jsp</result>
+</action>
+<action name="validerLaureat" class="com.ensak.bean.Laureat" method="ValiderLaureat">
+	<result name="success">Vues/Confscript.jsp</result> 
+	<result name="error">Vues/Inscrire.jsp</result>
+</action>
+</package>
+</struts>
