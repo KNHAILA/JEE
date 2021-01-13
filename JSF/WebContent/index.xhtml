@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<link rel="stylesheet" type="text/css" href="Styles.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Gestion des commandes</title>
+</head>
+<body>
+<h:form>
+<fieldset>
+<legend>Informations commande</legend>
+	<h:panelGrid columns="4">
+		<h:outputText value="Date"></h:outputText> 
+		<h:outputText value="*" class="required"></h:outputText>
+		<h:inputText value="#{paiement.date}" required="true" requiredMessage="Required field" id="idDate">
+		<f:convertDateTime pattern="dd/mm/yyyy"></f:convertDateTime> </h:inputText>
+		<h:message for="idDate" class="error"></h:message>
+		<h:outputText value="Montant"></h:outputText> 
+		<h:outputText value="*" class="required"></h:outputText>
+		<h:inputText value="#{paiement.montant}"  required="true" requiredMessage="Required field" id="idMontant" validatorMessage="Veuillez entrer un montant inférieur à 20000dh">
+		<f:validateDoubleRange maximum="20000"></f:validateDoubleRange>
+		</h:inputText>
+		<h:message for="idMontant" class="error"></h:message>
+		<h:outputText value="Mode de paiement"></h:outputText> 
+		<h:outputText value="*" class="required"></h:outputText>
+		<h:inputText value="#{paiement.modePaiement}" required="true" requiredMessage="Required field" id="idModePaiement" validatorMessage="Veuillez entrer une chaine entre 2 et 10 caractères">
+		<f:validateLength minimum="6" maximum="20"></f:validateLength>
+		</h:inputText>
+		<h:message for="idModePaiement" class="error"></h:message>
+		<h:outputText value="Statut du paiement"></h:outputText> 
+		<h:outputText value=""></h:outputText>
+		<h:inputText value="#{paiement.statutPaiement}"></h:inputText>
+		<h:outputText value=""></h:outputText>
+		<h:outputText value="Mode de livraison"></h:outputText> 
+		<h:outputText value="*" class="required"></h:outputText>
+		<h:inputText value="#{paiement.modeLivraison}" required="true" requiredMessage="Required field" id="idModeLivraison" validatorMessage="Veuillez entrer une chaine de longueur inférieur à 30">
+		<f:validateLength maximum="30"></f:validateLength>
+		</h:inputText>
+		<h:message for="idModeLivraison" class="error"></h:message>
+		<h:outputText value="Statut de la livraison"></h:outputText> 
+		<h:outputText value="*" class="required"></h:outputText>
+		<h:inputText value="#{paiement.statutLivraison}" required="true" requiredMessage="Required field" id="idStatutLivraison"></h:inputText>
+		<h:message for="idStatutLivraison" class="error"></h:message>
+	</h:panelGrid>
+	</fieldset>
+	<h:commandButton value="Valider" class="button" action="#{navigationController.moveToPage}"></h:commandButton>
+</h:form>
+</body>
+</html>

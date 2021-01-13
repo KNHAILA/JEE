@@ -1,0 +1,27 @@
+legend{
+	color:blue;
+	font: bold; 
+}
+.error{
+	color: green;
+	font:bold;
+}
+fieldset{
+	border-color: blue;
+	border-style: solid;
+	margin-bottom: 10px;
+	width: 500px;
+}
+
+
+.required{
+	color: red;
+}
+
+.affichage th,.affichage td{
+		border: 1px solid black;
+}
+
+.button{
+	margin-left: 100px;
+}
