@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.entities.Avion;
-import com.sun.org.glassfish.gmbal.ManagedObjectManager;
+
 
 /**
  * Session Bean implementation class ImpAvion
@@ -18,7 +18,7 @@ import com.sun.org.glassfish.gmbal.ManagedObjectManager;
 @LocalBean
 public class ImpAvion implements IRemote_Avion {
 	
-	@PersistenceContext(unitName = "UPAvion" )
+	@PersistenceContext(unitName = "dsAvion" )
 	private EntityManager em;
     /**
      * Default constructor. 
@@ -34,7 +34,8 @@ public class ImpAvion implements IRemote_Avion {
 
 	@Override
 	public void deleteAvion(Avion a) {
-		em.remove(a);
+		Avion av = em.find(Avion.class, a.getNumeroA());
+		em.remove(av);
 	}
 
 	@Override

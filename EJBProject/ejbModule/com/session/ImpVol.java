@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import com.entities.Avion;
 import com.entities.Vol;
 
 /**
@@ -18,7 +17,7 @@ import com.entities.Vol;
 @LocalBean
 public class ImpVol implements IRemote_Vol {
 
-	@PersistenceContext(unitName = "UPVol" )
+	@PersistenceContext(unitName = "dsAvion" )
 	private EntityManager em;
     /**
      * Default constructor. 

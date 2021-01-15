@@ -17,7 +17,7 @@ public class Avion implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "Numero_Avion")
-	private int numeroA;
+	private int NumeroA;
 	@Column(name = "Compagnie")
 	private String compagnie;
 	@Column(name = "Constructeur")
@@ -38,7 +38,7 @@ public class Avion implements Serializable {
 	
 	public Avion(int numeroA, String compagnie, String constructeur, String modele, int capacite) {
 		super();
-		this.numeroA = numeroA;
+		NumeroA = numeroA;
 		this.compagnie = compagnie;
 		this.constructeur = constructeur;
 		this.modele = modele;
@@ -46,10 +46,10 @@ public class Avion implements Serializable {
 	}
 	
 	public int getNumeroA() {
-		return numeroA;
+		return NumeroA;
 	}
 	public void setNumeroA(int numeroA) {
-		this.numeroA = numeroA;
+		this.NumeroA = numeroA;
 	}
 	public String getCompagnie() {
 		return compagnie;

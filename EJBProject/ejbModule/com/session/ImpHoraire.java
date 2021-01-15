@@ -7,8 +7,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-import com.entities.Avion;
 import com.entities.Horaire;
 
 /**
@@ -18,7 +16,7 @@ import com.entities.Horaire;
 @LocalBean
 public class ImpHoraire implements IRemote_Horaire {
 
-	@PersistenceContext(unitName = "UPHoraire" )
+	@PersistenceContext(unitName = "dsAvion" )
 	private EntityManager em;
     /**
      * Default constructor. 
@@ -29,12 +27,13 @@ public class ImpHoraire implements IRemote_Horaire {
 
 	@Override
 	public void addHoraire(Horaire a) {
-		em.persist(a);
+		em.merge(a);
 	}
 
 	@Override
 	public void deleteHoraire(Horaire a) {
-		em.remove(a);
+		Horaire h = em.find(Horaire.class, a.getNumeroH());
+		em.remove(h);
 	}
 
 	@Override
