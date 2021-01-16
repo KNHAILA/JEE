@@ -24,12 +24,9 @@ public class TestClient {
 			Avion avion2=new Avion(8, "compagnie2", "constructeur2", "modele2", 100);
 			iremoteAvion.addAvion(avion1);
 			iremoteAvion.updateAvion(avion2);
-			//iremoteAvion.deleteAvion(avion2);
-			//Context context = new InitialContext();
+			iremoteAvion.deleteAvion(avion2);
 			IRemote_Horaire iremoteHoraire=(IRemote_Horaire) context.lookup("EJBProject/ImpHoraire!com.session.IRemote_Horaire");
 			Horaire a=new Horaire(1, "villeDepart", "villeArrivée",new Date(), new Date());
-			//a.setVilleArrivée("ville arrivée");
-			//a.setVilleDepart("villeDepart");
 			iremoteHoraire.addHoraire(a);
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
