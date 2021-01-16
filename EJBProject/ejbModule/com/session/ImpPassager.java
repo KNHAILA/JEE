@@ -17,16 +17,16 @@ public class ImpPassager implements IRemote_Passager, PassagerSessionLocal {
     public ImpPassager() {
     }
 	@Override
-	public void addHoraire(Passager a) {
+	public void addPassager(Passager a) {
 		em.merge(a);
 	}
 	@Override
-	public void deleteHoraire(Passager a) {
+	public void deletePassager(Passager a) {
 		Passager p = em.find(Passager.class, a.getNumeroP());
 		em.remove(p);
 	}
 	@Override
-	public void updateHoraire(Passager a) {
+	public void updatePassager(Passager a) {
 		em.merge(a);	
 	}
 	@Override
@@ -40,3 +40,4 @@ public class ImpPassager implements IRemote_Passager, PassagerSessionLocal {
 		return q.getResultList();
 	}
 }
+
