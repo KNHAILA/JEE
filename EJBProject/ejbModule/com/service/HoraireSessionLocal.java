@@ -1,13 +1,13 @@
-package com.session;
+package com.service;
 
 import java.util.List;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 import com.entities.Horaire;
 
-@Remote
-public interface IRemote_Horaire {
+@Local
+public interface HoraireSessionLocal {
 	public void addHoraire(Horaire a);
 	public void deleteHoraire(Horaire a);
 	public void updateHoraire(Horaire a);
@@ -15,4 +15,3 @@ public interface IRemote_Horaire {
 	public List<Horaire> getAllHoraires();
 
 }
-

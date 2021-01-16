@@ -1,14 +1,11 @@
-package com.session;
+package com.service;
 
 import java.util.List;
-
-import javax.ejb.Remote;
-
+import javax.ejb.Local;
 import com.entities.Passager;
 
-
-@Remote
-public interface IRemote_Passager {
+@Local
+public interface PassagerSessionLocal {
 	public void addHoraire(Passager a);
 	public void deleteHoraire(Passager a);
 	public void updateHoraire(Passager a);
@@ -16,4 +13,3 @@ public interface IRemote_Passager {
 	public List<Passager> getAllPassagers();
 
 }
-

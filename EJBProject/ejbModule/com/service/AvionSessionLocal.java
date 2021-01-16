@@ -1,17 +1,17 @@
-package com.session;
+package com.service;
 
 import java.util.List;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 import com.entities.Avion;
 
-@Remote
-public interface IRemote_Avion {
+@Local
+public interface AvionSessionLocal {
 	public void addAvion(Avion a);
 	public void deleteAvion(Avion a);
 	public void updateAvion(Avion a);
 	public Avion getAvion(int numeroA);
 	public List<Avion> getAllAvions();
-}
 
+}
